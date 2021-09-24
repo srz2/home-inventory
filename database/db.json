@@ -1,0 +1,104 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "spoons",
+      "quantity": 8,
+      "location": "Kitchen",
+      "tags": [
+        "utensils",
+        "silver-ware"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "scissors",
+      "quantity": 16,
+      "location": "misc",
+      "tags": [
+        "crafting",
+        "cutting"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "raspberry pi",
+      "quantity": 5,
+      "location": "the palace",
+      "tags": [
+        "electronics",
+        "computer"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Honeycrisp Apples",
+      "quantity": 3,
+      "location": "kitchen",
+      "tags": [
+        "food",
+        "fruit"
+      ]
+    },
+    {
+      "name": "Computer",
+      "description": "Macbook Pro 2021 M1",
+      "quantity": "1",
+      "location": "My Room",
+      "color": "Silver",
+      "estimatedCost": "4500",
+      "sku": "",
+      "tags": [
+        "computer",
+        "apple",
+        "personal",
+        "expensive"
+      ],
+      "id": 5
+    },
+    {
+      "item": {
+        "item": {
+          "item": {
+            "name": "another",
+            "description": "",
+            "quantity": 1,
+            "location": "",
+            "color": "",
+            "estimatedCost": 0,
+            "sku": "",
+            "tags": [],
+            "id": 6
+          },
+          "id": 6
+        },
+        "id": 6
+      },
+      "id": 6
+    },
+    {
+      "name": "Yarn",
+      "description": "Caron 1 Lb",
+      "quantity": "3",
+      "location": "Craft Room",
+      "color": "Yellow",
+      "estimatedCost": "10.99",
+      "sku": "123556",
+      "tags": [
+        "yarn"
+      ],
+      "id": 7
+    },
+    {
+      "name": "another",
+      "description": "",
+      "quantity": 1,
+      "location": "",
+      "color": "",
+      "estimatedCost": 0,
+      "sku": "",
+      "tags": [],
+      "id": 8
+    }
+  ]
+}

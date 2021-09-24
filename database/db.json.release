@@ -1,0 +1,44 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "name": "spoons",
+            "quantity": 8,
+            "location": "Kitchen",
+            "tags": [
+                "utensils",
+                "silver-ware"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "scissors",
+            "quantity": 16,
+            "location": "misc",
+            "tags": [
+                "crafting",
+                "cutting"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "raspberry pi",
+            "quantity": 5,
+            "location": "the palace",
+            "tags": [
+                "electronics",
+                "computer"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Honeycrisp Apples",
+            "quantity": 3,
+            "location": "kitchen",
+            "tags": [
+                "food",
+                "fruit"
+            ]
+        }
+    ]
+}
