@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom"
 
-const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem}) => {
+const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem, deleteExistingItem}) => {
 
     const history = useHistory();
 
@@ -34,8 +34,16 @@ const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem}
 
         const newItem = {name, description, quantity, location, color, estimatedCost, sku, tags};
         if (existingItem){
-            console.log('Attempt to Update:', newItem);
-            updateExistingItem(newItem);
+            existingItem.name = name;
+            existingItem.description = description;
+            existingItem.quantity = quantity;
+            existingItem.location = location;
+            existingItem.color = color;
+            existingItem.estimatedCost = estimatedCost;
+            existingItem.sku = sku;
+            existingItem.tags = tags;
+            console.log('Attempt to Update:', existingItem);
+            updateExistingItem(existingItem);
         } else {
             console.log('Attempt to Create:', newItem);
             addNewItem(newItem);
@@ -103,8 +111,9 @@ const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem}
                 </div>
                 {existingItem && (
                     <div className="add-item-section add-item-actions">
-                        <button type="button" onClick={goToInventory}>Go To Inventory</button>
-                        <button className="submit" type="submit">Update Item</button>
+                        <button type="button" onClick={goToInventory}>Go Back To Inventory</button>
+                        <button type="button" className="btn-delete" onClick={deleteExistingItem}>Delete Item</button>
+                        <button type="submit" className="submit">Update Item</button>
                     </div>
                 )}
                 {!existingItem && (

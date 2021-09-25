@@ -24,7 +24,34 @@ function App() {
         body: JSON.stringify(item)
       })
       .then(() => {
-        alert('New item added')
+        window.location.reload(false);
+      })
+    }
+
+    function updateExistingItem(item) {
+      console.log('Updating item', item.id);
+      fetch('http://localhost:8000/items/' + item.id, {
+          method:"PUT",
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(item)
+      })
+      .then(() => {
+        window.location.reload(false);
+      })
+    }
+
+    function deleteExistingItem(item) {
+      console.log('Deleting item', item.id);
+      fetch('http://localhost:8000/items/' + item.id, {
+          method:"DELETE",
+          headers: {
+              'Content-Type': 'application/json'
+          },
+      })
+      .then(() => {
+        window.location.reload(false);
       })
     }
 
@@ -43,7 +70,7 @@ function App() {
             <h2>Hello, World</h2>
           </Route>
           <Route path="/item/:id">
-            <ItemDetails />
+            <ItemDetails updateExistingItem={updateExistingItem} deleteExistingItem={deleteExistingItem} />
           </Route>
         </Switch>
       </div>
