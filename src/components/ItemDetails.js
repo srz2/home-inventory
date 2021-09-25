@@ -2,10 +2,10 @@ import { useHistory, useParams } from 'react-router-dom'
 import useFetch from '../useFetch'
 import AddItem from './AddItem'
 
-const ItemDetails = ({updateExistingItem, deleteExistingItem}) => {
+const ItemDetails = ({itemsUrl, updateExistingItem, deleteExistingItem}) => {
     const {id} = useParams()
     const history = useHistory();
-    const { data: item, isLoading, error } = useFetch('http://localhost:8000/items/' + id)
+    const { data: item, isLoading, error } = useFetch(itemsUrl + '/' + id)
 
     const deleteItem = () => {
         console.log('Internal delete', item.id);

@@ -8,15 +8,16 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import ItemDetails from './components/ItemDetails';
 
 function App() {
+  const itemsUrl = 'http://localhost:8000/items'
   const [dialogVisable, setDialogVisable] = useState(false);
-  const {data: items, isLoading, error} = useFetch('http://localhost:8000/items')
+  const {data: items, isLoading, error} = useFetch(itemsUrl)
 
     function toggleAddDialog() {
         setDialogVisable(!dialogVisable);
     }
 
     function addNewItem(item) {
-      fetch('http://localhost:8000/items', {
+      fetch(itemsUrl, {
         method:"POST",
         headers: {
           "Content-Type": "application/json"
@@ -30,7 +31,7 @@ function App() {
 
     function updateExistingItem(item) {
       console.log('Updating item', item.id);
-      fetch('http://localhost:8000/items/' + item.id, {
+      fetch(itemsUrl + '/' + item.id, {
           method:"PUT",
           headers: {
               'Content-Type': 'application/json'
@@ -44,7 +45,7 @@ function App() {
 
     function deleteExistingItem(item) {
       console.log('Deleting item', item.id);
-      fetch('http://localhost:8000/items/' + item.id, {
+      fetch(itemsUrl + '/' + item.id, {
           method:"DELETE",
           headers: {
               'Content-Type': 'application/json'
@@ -66,11 +67,8 @@ function App() {
             {error && <p>ERROR: {error}</p>}
             {items && <ItemList items={items}/>}
           </Route>
-          <Route path="/sayhello">
-            <h2>Hello, World</h2>
-          </Route>
           <Route path="/item/:id">
-            <ItemDetails updateExistingItem={updateExistingItem} deleteExistingItem={deleteExistingItem} />
+            <ItemDetails itemsUrl={itemsUrl} updateExistingItem={updateExistingItem} deleteExistingItem={deleteExistingItem} />
           </Route>
         </Switch>
       </div>
