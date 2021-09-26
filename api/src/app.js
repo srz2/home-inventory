@@ -1,3 +1,4 @@
+const config = require('./config')
 const express = require('express')
 const bodyparser = require('body-parser')
 const mongoose = require('mongoose')
@@ -16,9 +17,9 @@ app.use(bodyparser.json());
 
 const routeItems = require('./routes/items')
 
-const mongoUsername = "hi_user";
-const mongoPassword = "gettothedata";
-const mongoDatabase = "home-inventory";
+const mongoUsername = config.MONGO.USERNAME;
+const mongoPassword = config.MONGO.PASSWORD;
+const mongoDatabase = config.MONGO.DATABASE;
 mongoose.connect(`mongodb+srv://${mongoUsername}:${mongoPassword}@cluster0.5398r.mongodb.net/${mongoDatabase}?retryWrites=true&w=majority`,
 {
     useNewUrlParser: true,
