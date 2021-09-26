@@ -1,7 +1,7 @@
 {
-  "items": [
+  "items": { "items": [
     {
-      "id": 1,
+      "_id": 1,
       "name": "spoons",
       "quantity": 8,
       "location": "Kitchen",
@@ -11,7 +11,7 @@
       ]
     },
     {
-      "id": 2,
+      "_id": 2,
       "name": "scissors",
       "quantity": 16,
       "location": "misc",
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "id": 3,
+      "_id": 3,
       "name": "raspberry pi",
       "quantity": 5,
       "location": "the palace",
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "id": 4,
+      "_id": 4,
       "name": "Honeycrisp Apples",
       "quantity": 3,
       "location": "kitchen",
@@ -54,7 +54,7 @@
         "personal",
         "expensive"
       ],
-      "id": 5
+      "_id": 5
     },
     {
       "name": "Yarn",
@@ -67,7 +67,7 @@
       "tags": [
         "yarn"
       ],
-      "id": 7
+      "_id": 7
     },
     {
       "name": "another",
@@ -78,7 +78,7 @@
       "estimatedCost": 0,
       "sku": "",
       "tags": [],
-      "id": 8
+      "_id": 8
     }
-  ]
+  ]}
 }
