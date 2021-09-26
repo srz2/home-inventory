@@ -65,7 +65,7 @@ function App() {
             {dialogVisable && <AddItem toggleAddDialog={toggleAddDialog} addNewItem={addNewItem}/>} 
             {isLoading && <h2>Loading inventory...</h2>}
             {error && <p>ERROR: {error}</p>}
-            {items && <ItemList items={items}/>}
+            {items && <ItemList items={items.items}/>}
           </Route>
           <Route path="/item/:id">
             <ItemDetails itemsUrl={itemsUrl} updateExistingItem={updateExistingItem} deleteExistingItem={deleteExistingItem} />

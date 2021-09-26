@@ -8,18 +8,18 @@ const ItemDetails = ({itemsUrl, updateExistingItem, deleteExistingItem}) => {
     const { data: item, isLoading, error } = useFetch(itemsUrl + '/' + id)
 
     const deleteItem = () => {
-        console.log('Internal delete', item.id);
-        const r = window.confirm(`Do you really want to delete ${item.name}?`);
+        console.log('Internal delete', item.item._id);
+        const r = window.confirm(`Do you really want to delete ${item.item.name}?`);
         if (r !== true) {
             return;
         }
-        deleteExistingItem(item)
+        deleteExistingItem(item.item)
         history.push('/')
     }
 
     const updateItem = () => {
-        console.log('Internal update', item.id);
-        updateExistingItem(item);
+        console.log('Internal update', item.item._id);
+        updateExistingItem(item.item);
         history.push('/');
     }
 
@@ -30,7 +30,7 @@ const ItemDetails = ({itemsUrl, updateExistingItem, deleteExistingItem}) => {
             {item && (
                 <div className="item-container">
                     <div className="item-details">
-                        <AddItem updateExistingItem={updateItem} existingItem={item} deleteExistingItem={deleteItem} />
+                        <AddItem updateExistingItem={updateItem} existingItem={item.item} deleteExistingItem={deleteItem} />
                     </div>
                 </div>
             )}
