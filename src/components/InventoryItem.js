@@ -1,6 +1,6 @@
 const InventoryItem = ({item, onClick}) => {
     const handleClick = () => {
-        onClick(item.id)
+        onClick(item._id)
     }
 
     return (

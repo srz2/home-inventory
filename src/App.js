@@ -30,8 +30,8 @@ function App() {
     }
 
     function updateExistingItem(item) {
-      console.log('Updating item', item.id);
-      fetch(itemsUrl + '/' + item.id, {
+      console.log('Updating item', item._id);
+      fetch(itemsUrl + '/' + item._id, {
           method:"PUT",
           headers: {
               'Content-Type': 'application/json'
@@ -44,8 +44,8 @@ function App() {
     }
 
     function deleteExistingItem(item) {
-      console.log('Deleting item', item.id);
-      fetch(itemsUrl + '/' + item.id, {
+      console.log('Deleting item', item._id);
+      fetch(itemsUrl + '/' + item._id, {
           method:"DELETE",
           headers: {
               'Content-Type': 'application/json'

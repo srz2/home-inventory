@@ -69,7 +69,7 @@ const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem,
     }
 
     function loadItemToGUI(item){
-        console.log('Loading existing', item.id);
+        console.log('Loading existing', item._id);
         setName(item.name);
         setDescription(item.description);
         setQuantity(item.quantity);

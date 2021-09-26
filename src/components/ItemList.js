@@ -23,7 +23,7 @@ const ItemList = ({items}) => {
             <tbody>
                 {
                     items.map((item)=>(
-                        <InventoryItem onClick={handleClick} item={item} key={item.id}/>
+                        <InventoryItem onClick={handleClick} item={item} key={item._id}/>
                     ))
                 }
             </tbody>
