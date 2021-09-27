@@ -71,6 +71,9 @@ function App() {
           <Route path="/item/:id">
             <ItemDetails itemsUrl={itemsUrl} updateExistingItem={updateExistingItem} deleteExistingItem={deleteExistingItem} />
           </Route>
+          <Route path="*">
+            <h2>Path not found</h2>
+          </Route>
         </Switch>
       </div>
     </Router>
