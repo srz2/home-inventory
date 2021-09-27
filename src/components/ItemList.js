@@ -62,7 +62,7 @@ const ItemList = ({items}) => {
 
     return (
         <div className="inventory-container">
-            <Search setSearchItems={handleNewSearchTerm} />
+            <Search setSearchItems={handleNewSearchTerm} results={displayItems} />
             <table className="inventory-list">
                 <thead>
                     <tr>
