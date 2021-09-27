@@ -6,9 +6,10 @@ import ItemList from './components/ItemList';
 import useFetch from './useFetch';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import ItemDetails from './components/ItemDetails';
+import config from './config'
 
 function App() {
-  const itemsUrl = 'https://srz2-home-inventory-api.herokuapp.com/items'
+  const itemsUrl = config.LOCAL_DEV ? 'http://localhost:8000/items' : 'https://srz2-home-inventory-api.herokuapp.com/items'
   const [dialogVisable, setDialogVisable] = useState(false);
   const {data: items, isLoading, error} = useFetch(itemsUrl)
 
