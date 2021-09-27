@@ -93,7 +93,7 @@ const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem,
             <form onSubmit={handleSubmitNewItem}>
                 <div className="add-item-section">
                     <input required type="text" name="itemName" placeholder="Item Name" defaultValue={name} onChange={(e) => setName(e.target.value)} />
-                    <input type="number" name="itemQuantity" placeholder="Quantity" defaultValue={quantity} onChange={(e) => setQuantity(e.target.value)} />
+                    <input type="number" name="itemQuantity" placeholder="Quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
                 </div>
                 <div className="add-item-section">
                     <input type="text" name="itemDescription" placeholder="Description" defaultValue={description} onChange={(e) => setDescription(e.target.value)} />
@@ -102,7 +102,7 @@ const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem,
                     <input type="text" name="itemLocation" placeholder="Location" defaultValue={location} onChange={(e) => setLocation(e.target.value)}/>
                     <input type="text" name="itemColor" placeholder="Color" defaultValue={color} onChange={(e) => setColor(e.target.value)} />
                     <label>$</label>
-                    <input type="number" step="0.01" min="0.0" name="itemEstCost" defaultValue={estimatedCost} placeholder="Est. Cost" onChange={(e) => setEstimatedCost(e.target.value)} />
+                    <input type="number" autoComplete="off" step="0.01" name="itemEstCost" value={estimatedCost} placeholder="Est. Cost" onChange={(e) => setEstimatedCost(e.target.value)} />
                     <input type="text" name="itemSKU" placeholder="SKU #" defaultValue={sku} onChange={(e) => setSku(e.target.value)} />
                 </div>
                 <div className="add-item-section">
