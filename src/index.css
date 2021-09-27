@@ -116,9 +116,15 @@ input {
   justify-content: center;
 }
 
-.inventory-list {
+.inventory-container {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   width: 75%;
+}
+
+.inventory-list {
+  margin-top: 15px;
 }
 
 .inventory-item {
@@ -127,4 +133,27 @@ input {
 
 .inventory-item:hover {
   background-color: rgb(3, 99, 3);
+}
+
+.search-container {
+  display: inherit;
+  justify-content: right;
+}
+
+.search-container label {
+  margin: 7px;
+}
+
+.search-container input {
+  background-color: #a19b9b;
+  border-radius: 25px;
+  border: none;
+  width: 350px;
+  padding-left: 10px;
+  color: white;
+}
+
+.search-container input::placeholder {
+  padding-left: 10px;
+  color: rgb(189, 184, 184);
 }
