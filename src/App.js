@@ -8,7 +8,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import ItemDetails from './components/ItemDetails';
 
 function App() {
-  const itemsUrl = 'http://localhost:8000/items'
+  const itemsUrl = 'https://srz2-home-inventory-api.herokuapp.com/items'
   const [dialogVisable, setDialogVisable] = useState(false);
   const {data: items, isLoading, error} = useFetch(itemsUrl)
 
