@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import config from './config'
 
 const useFetch = (url) => {
     const [data, setData] = useState(null)
@@ -9,7 +10,12 @@ const useFetch = (url) => {
         const abortController = new AbortController();
 
         setTimeout(() => {
-            fetch(url, {signal: abortController.signal})
+            fetch(url, {
+                headers: {
+                    api_key: config.API_KEY
+                },
+                signal: abortController.signal
+            })
                 .then(res => {
                     if (!res.ok) {
                     throw Error('Could not fetch data from server') 
