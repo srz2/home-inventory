@@ -74,6 +74,12 @@ const ItemList = ({items}) => {
                     </tr>
                 </thead>
                 <tbody>
+                    {
+                        items.length === 0 &&
+                        <InventoryItem key={-1} item={{
+                            name: "No Items Found, Start Adding Some!!!"
+                        }}/>
+                    }
                     { !displayItems &&
                         items.map((item)=>(
                             <InventoryItem onClick={handleClick} item={item} key={item._id}/>

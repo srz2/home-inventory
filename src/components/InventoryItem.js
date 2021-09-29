@@ -1,6 +1,9 @@
 const InventoryItem = ({item, onClick}) => {
     const handleClick = () => {
-        onClick(item._id)
+        if (item._id) {
+            console.log(`${item._id}`);
+            onClick(item._id)
+        }
     }
 
     return (
