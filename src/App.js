@@ -21,7 +21,8 @@ function App() {
       fetch(itemsUrl, {
         method:"POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          api_key: config.API_KEY
         },
         body: JSON.stringify(item)
       })
@@ -35,7 +36,8 @@ function App() {
       fetch(itemsUrl + '/' + item._id, {
           method:"PUT",
           headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              api_key: config.API_KEY
           },
           body: JSON.stringify(item)
       })
@@ -49,7 +51,8 @@ function App() {
       fetch(itemsUrl + '/' + item._id, {
           method:"DELETE",
           headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              api_key: config.API_KEY
           },
       })
       .then(() => {
