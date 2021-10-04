@@ -157,3 +157,56 @@ input {
   padding-left: 10px;
   color: rgb(189, 184, 184);
 }
+
+@media screen and (max-width: 600px) {
+  .header .hide-mobile {
+    display: none;
+  }
+
+  .header .special {
+    width: 150px;
+    height: 65px;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .add-item-dialog {
+    margin: 0;
+    margin-bottom: 25px;
+  }
+
+  .add-item-dialog .add-item-section {
+    display: block;
+  }
+
+  .add-item-dialog .add-item-section label {
+    display: inline;
+    width: 25%;
+    font-size: 28px;
+    margin: 25px;
+  }
+
+  .add-item-dialog .add-item-section label + input {
+    width: 75%;
+  }
+
+  .add-item-dialog .add-item-section input {
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .add-item-dialog .add-item-actions {
+    display: flex;
+    margin: 20px auto;
+  }
+
+  .add-item-dialog .add-item-actions button {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    width: 100%;
+  }
+}
