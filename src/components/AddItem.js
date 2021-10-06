@@ -7,6 +7,7 @@ const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem,
 
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
+    const [brandCompany, setBrandCompany] = useState('');
     const [quantity, setQuantity] = useState(1);
     const [location, setLocation] = useState('');
     const [color, setColor] = useState('');
@@ -17,6 +18,7 @@ const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem,
     function clearGUI() {
         setName('');
         setDescription('');
+        setBrandCompany('');
         setQuantity(1);
         setLocation('');
         setColor('')
@@ -32,10 +34,11 @@ const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem,
     const handleSubmitNewItem = (e) => {
         e.preventDefault();
 
-        const newItem = {name, description, quantity, location, color, estimatedCost, sku, tags};
+        const newItem = {name, description, brandCompany, quantity, location, color, estimatedCost, sku, tags};
         if (existingItem){
             existingItem.name = name;
             existingItem.description = description;
+            existingItem.brandCompany = brandCompany;
             existingItem.quantity = quantity;
             existingItem.location = location;
             existingItem.color = color;
@@ -72,6 +75,7 @@ const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem,
         console.log('Loading existing', item._id);
         setName(item.name);
         setDescription(item.description);
+        setBrandCompany(item.brandCompany);
         setQuantity(item.quantity);
         setLocation(item.location);
         setColor(item.color)
@@ -97,6 +101,9 @@ const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem,
                 </div>
                 <div className="add-item-section">
                     <input type="text" name="itemDescription" placeholder="Description" defaultValue={description} onChange={(e) => setDescription(e.target.value)} />
+                </div>
+                <div className="add-item-section">
+                    <input type="text" name="itemBrandCompany" placeholder="Brand or Company" defaultValue={brandCompany} onChange={(e) => setBrandCompany(e.target.value)}/>
                 </div>
                 <div className="add-item-section">
                     <input type="text" name="itemLocation" placeholder="Location" defaultValue={location} onChange={(e) => setLocation(e.target.value)}/>
