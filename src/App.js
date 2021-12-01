@@ -27,7 +27,10 @@ function App() {
         body: JSON.stringify(item)
       })
       .then(() => {
-        window.location.reload(false);
+        if (!item.createSimilar) {
+          console.log('Refreshing');
+          window.location.reload(false);
+        } else {console.log('Wont Refresh');}
       })
     }
 

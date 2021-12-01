@@ -14,6 +14,7 @@ const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem,
     const [estimatedCost, setEstimatedCost] = useState(0.0);
     const [sku, setSku] = useState('');
     const [tags, setTags] = useState([]);
+    const [createSimilar, setCreateSimilar] = useState(false);
 
     function clearGUI() {
         setName('');
@@ -34,7 +35,7 @@ const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem,
     const handleSubmitNewItem = (e) => {
         e.preventDefault();
 
-        const newItem = {name, description, brandCompany, quantity, location, color, estimatedCost, sku, tags};
+        const newItem = {name, description, brandCompany, quantity, location, color, estimatedCost, sku, tags, createSimilar};
         if (existingItem){
             existingItem.name = name;
             existingItem.description = description;
@@ -50,6 +51,12 @@ const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem,
         } else {
             console.log('Attempt to Create:', newItem);
             addNewItem(newItem);
+            if (newItem.createSimilar)
+            {
+                newItem.name = ''
+                newItem.quantity = 1
+                loadItemToGUI(newItem);
+            }
         }
     }
 
@@ -96,7 +103,7 @@ const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem,
             {!existingItem && <h2>Add A New Item</h2>}
             <form onSubmit={handleSubmitNewItem}>
                 <div className="add-item-section">
-                    <input required type="text" name="itemName" placeholder="Item Name" defaultValue={name} onChange={(e) => setName(e.target.value)} />
+                    <input required type="text" name="itemName" placeholder="Item Name" value={name} defaultValue={name} onChange={(e) => setName(e.target.value)} />
                     <input type="number" name="itemQuantity" placeholder="Quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
                 </div>
                 <div className="add-item-section">
@@ -118,16 +125,24 @@ const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem,
                 </div>
                 {existingItem && (
                     <div className="add-item-section add-item-actions">
-                        <button type="button" onClick={goToInventory}>Go Back To Inventory</button>
-                        <button type="button" className="btn-delete" onClick={deleteExistingItem}>Delete Item</button>
-                        <button type="submit" className="submit">Update Item</button>
+                        <div className="buttons">
+                            <button type="button" onClick={goToInventory}>Go Back To Inventory</button>
+                            <button type="button" className="btn-delete" onClick={deleteExistingItem}>Delete Item</button>
+                            <button type="submit" className="submit">Update Item</button>
+                        </div>
                     </div>
                 )}
                 {!existingItem && (
                     <div className="add-item-section add-item-actions">
-                        <button type="button" onClick={toggleAddDialog}>Close</button>
-                        <button type="reset" onClick={handleClear}>Clear</button>
-                        <button className="submit" type="submit">Add Item</button>
+                        <div className="buttons">
+                            <button type="button" onClick={toggleAddDialog}>Close</button>
+                            <button type="reset" onClick={handleClear}>Clear</button>
+                            <button className="submit" type="submit">Add Item</button>
+                        </div>
+                        <div className="options">
+                            <input type="checkbox" name="chkAddSimilar" defaultChecked={createSimilar} onChange={(e) => setCreateSimilar(e.target.checked)}/>
+                            <label>Add Similar</label>
+                        </div>
                     </div>
                 )}
             </form>

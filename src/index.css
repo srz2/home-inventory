@@ -158,6 +158,16 @@ input {
   color: rgb(189, 184, 184);
 }
 
+.add-item-section .options{
+  display: inherit;
+  font-size: 0.85em;
+  align-items: center;
+}
+
+.options label {
+  width: 150px;
+}
+
 @media screen and (max-width: 600px) {
   .header .hide-mobile {
     display: none;
