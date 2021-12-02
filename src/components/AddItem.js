@@ -103,7 +103,7 @@ const AddItem = ({toggleAddDialog, addNewItem, updateExistingItem, existingItem,
             {!existingItem && <h2>Add A New Item</h2>}
             <form onSubmit={handleSubmitNewItem}>
                 <div className="add-item-section">
-                    <input required type="text" name="itemName" placeholder="Item Name" value={name} defaultValue={name} onChange={(e) => setName(e.target.value)} />
+                    <input required type="text" name="itemName" placeholder="Item Name" value={name} onChange={(e) => setName(e.target.value)} />
                     <input type="number" name="itemQuantity" placeholder="Quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
                 </div>
                 <div className="add-item-section">
