@@ -208,6 +208,20 @@ input {
     width: 100%;
   }
 
+  .add-item-actions {
+    flex-direction: column;
+  }
+
+  .add-item-actions > div {
+    display: inherit;
+    flex-direction: row;
+  }
+
+  .options input[type='checkbox'] {
+    width: 200px;
+    transform: scale(2);
+  }
+
   .add-item-dialog .add-item-actions {
     display: flex;
     margin: 20px auto;
